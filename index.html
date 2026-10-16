@@ -1,0 +1,833 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gold Chick - Landing Page & Pemesanan Online</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- 1. HEADER & NAVBAR -->
+    <header class="navbar">
+      <div class="nav-container">
+        <a href="#" class="logo">
+          <img
+            src="logo gold chick.jpg"
+            alt="Logo Gold Chick"
+            class="logo-img"
+          />
+        </a>
+        <nav class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#menu">Menu</a>
+          <a href="#about">Tentang Kami</a>
+          <a href="#contact">Kontak</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Ayam Goreng Crispy Nikmat & Saus Special</h1>
+        <p>
+          Sensasi kelezatan renyahnya ayam goreng dipadukan dengan aneka racikan
+          sambal nusantara dan saus kekinian!
+        </p>
+        <a href="#menu" class="btn-hero">Pesan Sekarang</a>
+      </div>
+    </section>
+
+    <!-- SECTION MENU INTERAKTIF -->
+    <section id="menu" class="menu-section">
+      <div class="container">
+        <h2 class="section-title">Menu Pilihan Gold Chick</h2>
+        <p class="section-subtitle">
+          Pilih menu favoritmu dan kustomisasi sesuai selera!
+        </p>
+
+        <!-- Filter Kategori Button -->
+        <div class="filter-container">
+          <button class="filter-btn active" onclick="filterMenu('all', this)">
+            Semua
+          </button>
+          <button class="filter-btn" onclick="filterMenu('paket', this)">
+            Paket
+          </button>
+          <button class="filter-btn" onclick="filterMenu('alacarte', this)">
+            Ala Carte
+          </button>
+          <button class="filter-btn" onclick="filterMenu('minuman', this)">
+            Minuman
+          </button>
+        </div>
+
+        <!-- Grid Flashcard Menu -->
+        <div class="menu-grid">
+          <!-- KATEGORI: PAKET -->
+          <div
+            class="card"
+            data-category="paket"
+            data-id="p1"
+            data-name="Nasi Ayam Sambal Bawang"
+            data-price="22000"
+            data-type="paket"
+          >
+            <div class="card-badge">Best Seller</div>
+            <img
+              src="paket ayam sambal bawang.webp"
+              alt="Nasi Ayam Sambal Bawang"
+              class="card-img"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/300x180?text=Sambal+Bawang'
+              "
+            />
+            <div class="card-body">
+              <h3 class="card-title">Paket Ayam Sambal Bawang</h3>
+              <p class="card-desc">
+                Ayam goreng renyah disiram sambal bawang pedas gurih lengkap
+                dengan nasi hangat.
+              </p>
+              <div class="card-footer">
+                <span class="price-display">Rp 22.000</span>
+                <button class="btn-add" onclick="openCustomizeModal('p1')">
+                  + Tambah
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="card"
+            data-category="paket"
+            data-id="p2"
+            data-name="Nasi Ayam Sambal Matah"
+            data-price="23000"
+            data-type="paket"
+          >
+            <img
+              src="paket sambal matah.webp"
+              alt="Nasi Ayam Sambal Matah"
+              class="card-img"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/300x180?text=Sambal+Matah'
+              "
+            />
+            <div class="card-body">
+              <h3 class="card-title">Paket Ayam Sambal Matah</h3>
+              <p class="card-desc">
+                Ayam crispy dengan toping sambal matah segar irisan serai & daun
+                jeruk.
+              </p>
+              <div class="card-footer">
+                <span class="price-display">Rp 23.000</span>
+                <button class="btn-add" onclick="openCustomizeModal('p2')">
+                  + Tambah
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="card"
+            data-category="paket"
+            data-id="p3"
+            data-name="Nasi Ayam Mozza Leleh"
+            data-price="30000"
+            data-type="paket"
+          >
+            <div class="card-badge">Favorit</div>
+            <img
+              src="paket ayam moza.webp"
+              alt="Nasi Ayam Mozza Leleh"
+              class="card-img"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/300x180?text=Mozza+Leleh'
+              "
+            />
+            <div class="card-body">
+              <h3 class="card-title">Paket Ayam Mozza Leleh</h3>
+              <p class="card-desc">
+                Ayam goreng crispy dibalut lelehan keju mozzarella gurih dan
+                melimpah.
+              </p>
+              <div class="card-footer">
+                <span class="price-display">Rp 30.000</span>
+                <button class="btn-add" onclick="openCustomizeModal('p3')">
+                  + Tambah
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="card"
+            data-category="paket"
+            data-id="p4"
+            data-name="Nasi Ayam Saus Gulai"
+            data-price="24000"
+            data-type="paket"
+          >
+            <img
+              src="paket ayam gulai.webp"
+              alt="Nasi Ayam Saus Gulai"
+              class="card-img"
+              onerror="
+                this.src = 'https://via.placeholder.com/300x180?text=Saus+Gulai'
+              "
+            />
+            <div class="card-body">
+              <h3 class="card-title">Paket Ayam Saus Gulai</h3>
+              <p class="card-desc">
+                Perpaduan renyahnya ayam crispy dengan kuah/saus gulai kaya
+                rempah.
+              </p>
+              <div class="card-footer">
+                <span class="price-display">Rp 24.000</span>
+                <button class="btn-add" onclick="openCustomizeModal('p4')">
+                  + Tambah
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- KATEGORI: ALA CARTE -->
+          <div
+            class="card"
+            data-category="alacarte"
+            data-id="a1"
+            data-name="Ayam Sambal Bawang (Satuan)"
+            data-price="17000"
+            data-type="ayam_only"
+          >
+            <img
+              src="ala carte sambal bawang.webp"
+              alt="Ayam Sambal Bawang"
+              class="card-img"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/300x180?text=Ayam+Bawang'
+              "
+            />
+            <div class="card-body">
+              <h3 class="card-title">Ayam Sambal Bawang</h3>
+              <p class="card-desc">
+                1 Potong ayam crispy disiram sambal bawang pedas (tanpa nasi).
+              </p>
+              <div class="card-footer">
+                <span class="price-display">Rp 17.000</span>
+                <button class="btn-add" onclick="openCustomizeModal('a1')">
+                  + Tambah
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="card"
+            data-category="alacarte"
+            data-id="a2"
+            data-name="Ayam Sambal Matah (Satuan)"
+            data-price="18000"
+            data-type="ayam_only"
+          >
+            <img
+              src="ala carte sambal matah.webp"
+              alt="Ayam Sambal Matah"
+              class="card-img"
+              onerror="
+                this.src = 'https://via.placeholder.com/300x180?text=Ayam+Matah'
+              "
+            />
+            <div class="card-body">
+              <h3 class="card-title">Ayam Sambal Matah</h3>
+              <p class="card-desc">
+                1 Potong ayam crispy dengan sambal matah khas Bali (tanpa nasi).
+              </p>
+              <div class="card-footer">
+                <span class="price-display">Rp 18.000</span>
+                <button class="btn-add" onclick="openCustomizeModal('a2')">
+                  + Tambah
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="card"
+            data-category="alacarte"
+            data-id="a5"
+            data-name="Ayam Mozza Leleh (Satuan)"
+            data-price="21000"
+            data-type="ayam_only"
+          >
+            <img
+              src="ala carte moza.webp"
+              alt="Ayam Mozza Leleh"
+              class="card-img"
+              onerror="
+                this.src = 'https://via.placeholder.com/300x180?text=Ayam+Mozza'
+              "
+            />
+            <div class="card-body">
+              <h3 class="card-title">Ayam Mozza Leleh</h3>
+              <p class="card-desc">
+                1 Potong ayam crispy dibalut keju mozzarella leleh gurih (tanpa
+                nasi).
+              </p>
+              <div class="card-footer">
+                <span class="price-display">Rp 21.000</span>
+                <button class="btn-add" onclick="openCustomizeModal('a5')">
+                  + Tambah
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="card"
+            data-category="alacarte"
+            data-id="a6"
+            data-name="Ayam Saus Gulai (Satuan)"
+            data-price="19000"
+            data-type="ayam_only"
+          >
+            <img
+              src="ala carte saus gulai.webp"
+              alt="Ayam Saus Gulai"
+              class="card-img"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/300x180?text=Ayam+Saus+Gulai'
+              "
+            />
+            <div class="card-body">
+              <h3 class="card-title">Ayam Saus Gulai</h3>
+              <p class="card-desc">
+                1 Potong ayam crispy disiram saus gulai khas kaya rempah (tanpa
+                nasi).
+              </p>
+              <div class="card-footer">
+                <span class="price-display">Rp 19.000</span>
+                <button class="btn-add" onclick="openCustomizeModal('a6')">
+                  + Tambah
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="card"
+            data-category="alacarte"
+            data-id="a7"
+            data-name="Nasi Putih"
+            data-price="4000"
+            data-type="none"
+          >
+            <img
+              src="nasi putih.webp"
+              alt="Nasi Putih"
+              class="card-img"
+              onerror="
+                this.src = 'https://via.placeholder.com/300x180?text=Nasi+Putih'
+              "
+            />
+            <div class="card-body">
+              <h3 class="card-title">Nasi Putih</h3>
+              <p class="card-desc">
+                Nasi putih hangat pulen porsi pas sebagai pelengkap sajian ayam.
+              </p>
+              <div class="card-footer">
+                <span class="price-display">Rp 4.000</span>
+                <button class="btn-add" onclick="openCustomizeModal('a7')">
+                  + Tambah
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="card"
+            data-category="alacarte"
+            data-id="a3"
+            data-name="Nasi Ijo Jeruk"
+            data-price="10000"
+            data-type="none"
+          >
+            <img
+              src="nasi jeruk.webp"
+              alt="Nasi Ijo Jeruk"
+              class="card-img"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/300x180?text=Nasi+Ijo+Jeruk'
+              "
+            />
+            <div class="card-body">
+              <h3 class="card-title">Nasi Ijo Jeruk</h3>
+              <p class="card-desc">
+                Nasi gurih beraroma daun jeruk yang harum dan segar.
+              </p>
+              <div class="card-footer">
+                <span class="price-display">Rp 10.000</span>
+                <button class="btn-add" onclick="openCustomizeModal('a3')">
+                  + Tambah
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="card"
+            data-category="alacarte"
+            data-id="a4"
+            data-name="Indomie Goreng"
+            data-price="7000"
+            data-type="none"
+          >
+            <img
+              src="indomie goreng.webp"
+              alt="Indomie Goreng"
+              class="card-img"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/300x180?text=Indomie+Goreng'
+              "
+            />
+            <div class="card-body">
+              <h3 class="card-title">Indomie Goreng</h3>
+              <p class="card-desc">
+                Indomie goreng lezat pelengkap sajian ayam crispy.
+              </p>
+              <div class="card-footer">
+                <span class="price-display">Rp 7.000</span>
+                <button class="btn-add" onclick="openCustomizeModal('a4')">
+                  + Tambah
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- KATEGORI: MINUMAN -->
+          <div
+            class="card"
+            data-category="minuman"
+            data-id="m1"
+            data-name="Teh Manis"
+            data-price="5000"
+            data-type="minuman"
+          >
+            <img
+              src="teh manis.webp"
+              alt="Teh Manis"
+              class="card-img"
+              onerror="
+                this.src = 'https://via.placeholder.com/300x180?text=Teh+Manis'
+              "
+            />
+            <div class="card-body">
+              <h3 class="card-title">Teh Manis</h3>
+              <p class="card-desc">Minuman teh manis segar penyegar dahaga.</p>
+              <div class="card-footer">
+                <span class="price-display">Rp 5.000</span>
+                <button class="btn-add" onclick="openCustomizeModal('m1')">
+                  + Tambah
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="card"
+            data-category="minuman"
+            data-id="m2"
+            data-name="Teh Tawar"
+            data-price="4000"
+            data-type="minuman"
+          >
+            <img
+              src="teh tawar.webp"
+              alt="Teh Tawar"
+              class="card-img"
+              onerror="
+                this.src = 'https://via.placeholder.com/300x180?text=Teh+Tawar'
+              "
+            />
+            <div class="card-body">
+              <h3 class="card-title">Teh Tawar</h3>
+              <p class="card-desc">
+                Minuman teh tawar pas untuk pendamping hidangan pedas.
+              </p>
+              <div class="card-footer">
+                <span class="price-display">Rp 4.000</span>
+                <button class="btn-add" onclick="openCustomizeModal('m2')">
+                  + Tambah
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="card"
+            data-category="minuman"
+            data-id="m3"
+            data-name="Air Putih"
+            data-price="3000"
+            data-type="none"
+          >
+            <img
+              src="air putih.webp"
+              alt="Air Putih"
+              class="card-img"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/300x180?text=Air+Mineral'
+              "
+            />
+            <div class="card-body">
+              <h3 class="card-title">Air Putih</h3>
+              <p class="card-desc">Air mineral kemasan botol segar 600ml.</p>
+              <div class="card-footer">
+                <span class="price-display">Rp 3.000</span>
+                <button class="btn-add" onclick="openCustomizeModal('m3')">
+                  + Tambah
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 & 4. FLOATING CART BUTTON (IKON KERANJANG MELAYANG) -->
+    <div class="floating-cart" onclick="toggleCartDrawer()">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span class="cart-badge" id="cartBadge">0</span>
+    </div>
+
+    <!-- 2. POP-UP MODAL KUSTOMISASI MENU -->
+    <div id="customizeModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeCustomizeModal()">&times;</span>
+        <h3 id="modalTitle">Kustomisasi Menu</h3>
+        <p class="modal-base-price" id="modalBasePrice">Harga Base: Rp 0</p>
+
+        <form id="customizeForm">
+          <!-- Dropdown Potongan Ayam -->
+          <div class="form-group" id="grpAyam" style="display: none">
+            <label>Pilihan Potongan Ayam:</label>
+            <select id="selAyam" onchange="calcModalTotal()">
+              <option value="0">Random / Paha Bawah / Sayap (+Rp 0)</option>
+              <option value="3000">Paha Atas / Dada (+Rp 3.000)</option>
+            </select>
+          </div>
+
+          <!-- Dropdown Karbohidrat -->
+          <div class="form-group" id="grpKarbo" style="display: none">
+            <label>Pilihan Karbohidrat:</label>
+            <select id="selKarbo" onchange="calcModalTotal()">
+              <option value="0">Nasi Putih (+Rp 0)</option>
+              <option value="7000">Nasi Ijo Jeruk (+Rp 7.000)</option>
+              <option value="4000">Indomie (+Rp 4.000)</option>
+            </select>
+          </div>
+
+          <!-- Dropdown Suhu Minuman -->
+          <div class="form-group" id="grpSuhu" style="display: none">
+            <label>Pilihan Suhu:</label>
+            <select id="selSuhu">
+              <option value="Iced">Dingin / Iced (+Rp 0)</option>
+              <option value="Hot">Hangat / Hot (+Rp 0)</option>
+            </select>
+          </div>
+
+          <!-- Dropdown Sambal -->
+          <div class="form-group" id="grpSambal" style="display: none">
+            <label>Pilihan Sambal:</label>
+            <select id="selSambal">
+              <option value="Pisah">Pisah (+Rp 0)</option>
+              <option value="Campur">Campur (+Rp 0)</option>
+            </select>
+          </div>
+
+          <div class="modal-footer-custom">
+            <span class="total-modal-price" id="modalTotalPrice">Rp 0</span>
+            <div class="qty-control">
+              <button
+                type="button"
+                class="qty-btn"
+                onclick="changeModalQty(-1)"
+              >
+                -
+              </button>
+              <span id="modalQty" class="qty-number">1</span>
+              <button type="button" class="qty-btn" onclick="changeModalQty(1)">
+                +
+              </button>
+            </div>
+            <button
+              type="button"
+              class="btn-submit-cart"
+              onclick="addSelectedToCart()"
+            >
+              Masukkan Ke Keranjang
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- DRAWER KERANJANG BELANJA -->
+    <div id="cartDrawer" class="cart-drawer">
+      <div class="drawer-header">
+        <h3><i class="fa-solid fa-basket-shopping"></i> Keranjang Pesanan</h3>
+        <span class="close-drawer" onclick="toggleCartDrawer()">&times;</span>
+      </div>
+      <div class="drawer-body" id="cartItemsContainer">
+        <p class="empty-msg">Keranjang belanjaanmu masih kosong.</p>
+      </div>
+      <div class="drawer-footer">
+        <div class="grand-total">
+          <span>Total Biaya:</span>
+          <strong id="cartGrandTotal">Rp 0</strong>
+        </div>
+
+        <!-- 5. Tombol Lanjut ke Halaman Checkout -->
+        <button
+          class="btn-checkout"
+          id="btnGoCheckout"
+          onclick="openCheckoutModal()"
+          disabled
+        >
+          Lanjut Pesan Sekarang
+        </button>
+      </div>
+    </div>
+
+    <!-- 5, 6, 7 & 8. MODAL CHECKOUT (PEMBAYARAN & TIPE PESANAN) -->
+    <div id="checkoutModal" class="modal">
+      <div class="modal-content checkout-content">
+        <span class="close-btn" onclick="closeCheckoutModal()">&times;</span>
+        <h3>Checkout & Pembayaran</h3>
+        <p class="checkout-sub">
+          Lengkapi opsi pilihan layanan & metode pembayaran untuk memproses
+          pesanan.
+        </p>
+
+        <form id="checkoutForm">
+          <!-- 7. Pilihan Dine In / Take Away -->
+          <div class="form-section">
+            <h4>1. Tipe Layanan <span class="required">*</span></h4>
+            <div class="radio-group">
+              <label class="radio-card">
+                <input
+                  type="radio"
+                  name="orderType"
+                  value="Dine In"
+                  onchange="validateCheckoutForm()"
+                />
+                <div class="radio-body">
+                  <i class="fa-solid fa-utensils"></i>
+                  <span>Dine In (Makan di Tempat)</span>
+                </div>
+              </label>
+              <label class="radio-card">
+                <input
+                  type="radio"
+                  name="orderType"
+                  value="Take Away"
+                  onchange="validateCheckoutForm()"
+                />
+                <div class="radio-body">
+                  <i class="fa-solid fa-bag-shopping"></i>
+                  <span>Take Away (Bawa Pulang)</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- 6. Pilihan Metode Pembayaran -->
+          <div class="form-section">
+            <h4>2. Metode Pembayaran <span class="required">*</span></h4>
+            <div class="radio-group">
+              <label class="radio-card">
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  value="Cash (Tunai)"
+                  onchange="validateCheckoutForm()"
+                />
+                <div class="radio-body">
+                  <i class="fa-solid fa-money-bill-wave"></i>
+                  <span>Cash (Tunai)</span>
+                </div>
+              </label>
+              <label class="radio-card">
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  value="Transfer Bank"
+                  onchange="validateCheckoutForm()"
+                />
+                <div class="radio-body">
+                  <i class="fa-solid fa-building-columns"></i>
+                  <span>Transfer Bank</span>
+                </div>
+              </label>
+              <label class="radio-card">
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  value="QRIS"
+                  onchange="validateCheckoutForm()"
+                />
+                <div class="radio-body">
+                  <i class="fa-solid fa-qrcode"></i>
+                  <span>QRIS</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- 8. Tombol Bayar Sekarang (Disabled sampai 2 opsi di atas dipilih) -->
+          <div class="checkout-footer-action">
+            <button
+              type="button"
+              class="btn-pay-now"
+              id="btnPayNow"
+              onclick="processPayment()"
+              disabled
+            >
+              Bayar Sekarang
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- 9. MODAL TERIMA KASIH (SUCCESS PAYMENT) -->
+    <div id="successModal" class="modal">
+      <div class="modal-content success-content">
+        <div class="success-icon">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <h2>Pembayaran Berhasil!</h2>
+        <p>
+          Terima kasih telah membayar dan memesan di
+          <strong>Gold Chick</strong>. Pesanan Anda sedang diproses dan selamat
+          menunggu!
+        </p>
+        <div class="order-summary-box" id="successSummaryBox">
+          <!-- Rincian Pesanan dimuat dinamis lewat JS -->
+        </div>
+        <button class="btn-finish" onclick="resetAllAndClose()">
+          Selesai & Kembali ke Menu
+        </button>
+      </div>
+    </div>
+
+    <!-- TENTANG KAMI SECTION (BAGUS & MODERN) -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <h2 class="section-title">Mengapa Memilih Gold Chick?</h2>
+        <p class="section-subtitle">
+          Komitmen kami menyajikan kelezatan ayam goreng crispy terbaik untuk
+          Anda.
+        </p>
+
+        <div class="about-grid">
+          <div class="about-card">
+            <div class="about-icon">
+              <i class="fa-solid fa-drumstick-bite"></i>
+            </div>
+            <h3>Ayam Fresh & Crispy</h3>
+            <p>
+              Diproses dari bahan baku ayam pilihan yang selalu segar setiap
+              hari, digoreng dengan racikan tepung rempah khusus hingga renyah
+              sempurna.
+            </p>
+          </div>
+          <div class="about-card">
+            <div class="about-icon"><i class="fa-solid fa-pepper-hot"></i></div>
+            <h3>Sambal & Saus Autentik</h3>
+            <p>
+              Dari Sambal Bawang pedas nampol, Sambal Matah segar, hingga Saus
+              Mozzarella leleh dan Saus Gulai kaya rasa khas nusantara.
+            </p>
+          </div>
+          <div class="about-card">
+            <div class="about-icon"><i class="fa-solid fa-wallet"></i></div>
+            <h3>Ramah Di Kantong</h3>
+            <p>
+              Menyajikan kualitas rasa kelas atas dengan harga paket yang pas
+              buat mahasiswa dan keluarga tanpa bikin kantong bolong.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER WEBSITE UMKM (KONTAK BISA DIPENCET) -->
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <div class="footer-logo">
+            <img
+              src="logo gold chick.jpg"
+              alt="Logo Gold Chick"
+              class="footer-logo-img"
+            />
+          </div>
+          <p>
+            Spesialis Ayam Goreng Crispy Nikmat & Sambal Nusantara. Pilihan
+            terbaik buat santap siang & malammu!
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Jam Operasional</h4>
+          <p><i class="fa-regular fa-clock"></i> Senin - Minggu</p>
+          <p>10:00 - 22:00 WIB</p>
+        </div>
+        <div class="footer-col">
+          <h4>Hubungi Kami</h4>
+          <p>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              class="contact-link"
+            >
+              <i class="fa-brands fa-instagram"></i> @goldchick.id
+            </a>
+          </p>
+          <p>
+            <a
+              href="https://wa.me/6281234567890?text=Halo%20Gold%20Chick,%20saya%20mau%20tanya%20menu"
+              target="_blank"
+              class="contact-link"
+            >
+              <i class="fa-brands fa-whatsapp"></i> 0812-3456-7890 (WhatsApp)
+            </a>
+          </p>
+          <p>
+            <a href="tel:081234567890" class="contact-link">
+              <i class="fa-solid fa-phone"></i> (021) 555-1234 (Telepon)
+            </a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 Gold Chick UMKM. Dibuat untuk Tugas Pemrograman Web UTS.
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
