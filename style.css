@@ -20,7 +20,7 @@ body {
 
 /* 1. MOBILE POS NAVBAR HEADER */
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
   max-width: 480px;
