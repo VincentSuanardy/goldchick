@@ -5,10 +5,10 @@ let modalQty = 1;
 
 // Database Sementara Menu
 const menuData = {
-  p1: { name: "Nasi Ayam Sambal Bawang", price: 22000, type: "paket" },
-  p2: { name: "Nasi Ayam Sambal Matah", price: 23000, type: "paket" },
-  p3: { name: "Nasi Ayam Mozza Leleh", price: 30000, type: "paket" },
-  p4: { name: "Nasi Ayam Saus Gulai", price: 24000, type: "paket" },
+  p1: { name: "Paket Ayam Sambal Bawang", price: 22000, type: "paket" },
+  p2: { name: "Paket Ayam Sambal Matah", price: 23000, type: "paket" },
+  p3: { name: "Paket Ayam Mozza Leleh", price: 30000, type: "paket" },
+  p4: { name: "Paket Ayam Saus Gulai", price: 24000, type: "paket" },
   a1: { name: "Ayam Sambal Bawang (Satuan)", price: 17000, type: "ayam_only" },
   a2: { name: "Ayam Sambal Matah (Satuan)", price: 18000, type: "ayam_only" },
   a5: { name: "Ayam Mozza Leleh (Satuan)", price: 21000, type: "ayam_only" },
